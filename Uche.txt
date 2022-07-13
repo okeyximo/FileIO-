@@ -1,6 +1,0 @@
-#### RECEIPT ####
-s/n |   Product Name   | Qty | Amount  
-1.      Carrot             2000     3540.0
-Total amount ---------> 3540.0
-Customer - Uche
-Thanks for your Patronage

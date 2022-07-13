@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>/Users/decagon/IdeaProjects/FileIOWeek2/src</OriginalElement>
+  <nodes>
+    <node x="-75.30606463751428" y="707.9117669154223">org.example.model.Manager</node>
+    <node x="31.338185335372117" y="1087.5418282566043">org.example.App</node>
+    <node x="366.87205267215984" y="405.0448837109154">org.example.model.StoreTest</node>
+    <node x="365.6906169768421" y="1098.0114815802071">org.example.model.Cashier</node>
+    <node x="868.7926080462917" y="635.9433240261692">org.example.model.Store</node>
+    <node x="256.07748410967514" y="630.6719895268787">org.example.model.Product</node>
+    <node x="33.73681892605816" y="427.3403977038189">org.example.enums.Qualification</node>
+    <node x="578.7298833375816" y="860.2281927034835">org.example.AppTest</node>
+    <node x="689.3552939747601" y="256.25506470531326">org.example.model.Customer</node>
+    <node x="278.4958869945912" y="135.9436308853861">org.example.model.CustomerTest</node>
+    <node x="586.4559469050206" y="682.9940860340766">org.example.FrontEnd</node>
+    <node x="640.4345031868045" y="-13.345526006290811">org.example.model.ManagerTest</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="org.example.model.Store" target="org.example.model.Cashier" relationship="TO_MANY">
+      <point x="-186.99960804629166" y="239.9996759738308" />
+      <point x="733.0" y="1123.443" />
+      <point x="733.0" y="1257.511" />
+      <point x="136.50038302315795" y="-4.8158020717892214E-4" />
+    </edge>
+    <edge source="org.example.model.CustomerTest" target="org.example.model.Store" relationship="TO_ONE">
+      <point x="-84.6238869945912" y="104.5003691146139" />
+      <point x="334.372" y="587.84" />
+      <point x="669.0" y="587.84" />
+      <point x="669.0" y="643.443" />
+      <point x="-186.99960804629166" y="-240.0003240261692" />
+    </edge>
+    <edge source="org.example.model.Cashier" target="org.example.enums.Qualification" relationship="TO_ONE">
+      <point x="-136.5" y="14.999518419792821" />
+      <point x="-137.80599999999998" y="1272.511" />
+      <point x="-137.80599999999998" y="498.8403977038189" />
+      <point x="-116.5" y="0.0" />
+    </edge>
+    <edge source="org.example.model.CustomerTest" target="org.example.model.Store" relationship="CREATE">
+      <point x="-69.6238869945912" y="104.5003691146139" />
+      <point x="349.372" y="603.0" />
+      <point x="1055.793" y="603.0" />
+      <point x="3.9195370823108533E-4" y="-247.5003240261692" />
+    </edge>
+    <edge source="org.example.model.ManagerTest" target="org.example.model.Store" relationship="CREATE">
+      <point x="-139.49950318680453" y="104.49952600629081" />
+      <point x="647.935" y="603.0" />
+      <point x="1055.793" y="603.0" />
+      <point x="3.9195370823108533E-4" y="-247.5003240261692" />
+    </edge>
+    <edge source="org.example.App" target="org.example.model.Manager" relationship="CREATE">
+      <point x="81.99981466462788" y="1.7174339564007823E-4" />
+      <point x="226.0" y="1125.542" />
+      <point x="226.0" y="779.412" />
+      <point x="135.50006463751427" y="2.330845777578361E-4" />
+    </edge>
+    <edge source="org.example.model.StoreTest" target="org.example.model.Store" relationship="CREATE">
+      <point x="-5.2672159824851406E-5" y="82.50011628908453" />
+      <point x="497.872" y="603.0" />
+      <point x="1055.793" y="603.0" />
+      <point x="3.9195370823108533E-4" y="-247.5003240261692" />
+    </edge>
+    <edge source="org.example.model.StoreTest" target="org.example.model.Manager" relationship="CREATE">
+      <point x="-5.2672159824851406E-5" y="-82.49988371091541" />
+      <point x="497.872" y="375.0" />
+      <point x="-92.806" y="375.0" />
+      <point x="-92.806" y="890.0" />
+      <point x="226.0" y="890.0" />
+      <point x="226.0" y="779.412" />
+      <point x="135.50006463751427" y="2.330845777578361E-4" />
+    </edge>
+    <edge source="org.example.model.CustomerTest" target="org.example.model.Customer" relationship="CREATE">
+      <point x="-99.6238869945912" y="104.5003691146139" />
+      <point x="319.372" y="360.0" />
+      <point x="576.996" y="360.0" />
+      <point x="576.996" y="337.444" />
+      <point x="-145.5002939747601" y="-78.31106470531324" />
+    </edge>
+    <edge source="org.example.model.CustomerTest" target="org.example.model.Customer" relationship="TO_ONE">
+      <point x="140.50000000000006" y="23.311433819927146" />
+      <point x="-145.5" y="-152.0" />
+    </edge>
+    <edge source="org.example.model.Store" target="org.example.model.Manager" relationship="TO_ONE">
+      <point x="-186.99960804629166" y="-3.240261692099011E-4" />
+      <point x="841.23" y="883.443" />
+      <point x="841.23" y="1063.0" />
+      <point x="60.194" y="1063.0" />
+      <point x="6.463751428498199E-5" y="71.50023308457776" />
+    </edge>
+    <edge source="org.example.App" target="org.example.model.Cashier" relationship="CREATE">
+      <point x="81.99981466462788" y="-14.99982825660436" />
+      <point x="211.0" y="1110.542" />
+      <point x="211.0" y="1257.511" />
+      <point x="-136.4996169768421" y="-4.8158020717892214E-4" />
+    </edge>
+    <edge source="org.example.model.StoreTest" target="org.example.model.Store" relationship="TO_ONE">
+      <point x="130.99994732784012" y="1.1628908458760634E-4" />
+      <point x="669.0" y="487.545" />
+      <point x="669.0" y="643.443" />
+      <point x="-186.99960804629166" y="-240.0003240261692" />
+    </edge>
+    <edge source="org.example.model.ManagerTest" target="org.example.model.Cashier" relationship="TO_ONE">
+      <point x="147.00049681319547" y="-30.000473993709186" />
+      <point x="1275.293" y="61.154" />
+      <point x="1275.293" y="1200.0" />
+      <point x="733.0" y="1200.0" />
+      <point x="733.0" y="1257.511" />
+      <point x="136.50038302315795" y="-4.8158020717892214E-4" />
+    </edge>
+    <edge source="org.example.model.CustomerTest" target="org.example.model.Manager" relationship="CREATE">
+      <point x="1.1300540876391096E-4" y="104.5003691146139" />
+      <point x="418.996" y="375.0" />
+      <point x="-92.806" y="375.0" />
+      <point x="-92.806" y="890.0" />
+      <point x="226.0" y="890.0" />
+      <point x="226.0" y="779.412" />
+      <point x="135.50006463751427" y="2.330845777578361E-4" />
+    </edge>
+    <edge source="org.example.App" target="org.example.model.Customer" relationship="CREATE">
+      <point x="-82.00018533537212" y="1.7174339564007823E-4" />
+      <point x="-107.806" y="1125.542" />
+      <point x="-107.806" y="337.444" />
+      <point x="260.996" y="337.444" />
+      <point x="260.996" y="360.0" />
+      <point x="576.996" y="360.0" />
+      <point x="576.996" y="337.444" />
+      <point x="-145.5002939747601" y="-78.31106470531324" />
+    </edge>
+    <edge source="org.example.model.ManagerTest" target="org.example.model.Manager" relationship="TO_ONE">
+      <point x="147.00049681319547" y="-15.000473993709193" />
+      <point x="1260.293" y="76.154" />
+      <point x="1260.293" y="1148.443" />
+      <point x="841.23" y="1148.443" />
+      <point x="841.23" y="1063.0" />
+      <point x="60.194" y="1063.0" />
+      <point x="6.463751428498199E-5" y="71.50023308457776" />
+    </edge>
+    <edge source="org.example.model.Store" target="org.example.model.Product" relationship="TO_MANY">
+      <point x="-186.99960804629166" y="-108.94932402616917" />
+      <point x="841.23" y="774.494" />
+      <point x="841.23" y="664.0" />
+      <point x="767.956" y="664.0" />
+      <point x="767.956" y="834.172" />
+      <point x="130.99951589032486" y="1.0473121278664621E-5" />
+    </edge>
+    <edge source="org.example.model.ManagerTest" target="org.example.model.Manager" relationship="CREATE">
+      <point x="-120.93450318680448" y="104.49952600629081" />
+      <point x="666.5" y="375.0" />
+      <point x="-92.806" y="375.0" />
+      <point x="-92.806" y="890.0" />
+      <point x="226.0" y="890.0" />
+      <point x="226.0" y="779.412" />
+      <point x="135.50006463751427" y="2.330845777578361E-4" />
+    </edge>
+    <edge source="org.example.model.Store" target="org.example.model.Product" relationship="CREATE">
+      <point x="-187.0" y="70.28486867731431" />
+      <point x="131.00000000000006" y="119.55620317660475" />
+    </edge>
+    <edge source="org.example.model.Customer" target="org.example.model.Product" relationship="TO_MANY">
+      <point x="6.374706025239902" y="159.49993529468674" />
+      <point x="841.23" y="664.0" />
+      <point x="767.956" y="664.0" />
+      <point x="767.956" y="834.172" />
+      <point x="130.99951589032486" y="1.0473121278664621E-5" />
+    </edge>
+    <edge source="org.example.model.ManagerTest" target="org.example.model.Store" relationship="TO_ONE">
+      <point x="147.00049681319547" y="-4.7399370919265493E-4" />
+      <point x="1070.793" y="91.154" />
+      <point x="1070.793" y="618.0" />
+      <point x="669.0" y="618.0" />
+      <point x="669.0" y="643.443" />
+      <point x="-186.99960804629166" y="-240.0003240261692" />
+    </edge>
+    <edge source="org.example.App" target="org.example.model.Store" relationship="CREATE">
+      <point x="-1.8533537212306328E-4" y="38.00017174339564" />
+      <point x="113.338" y="1434.511" />
+      <point x="826.23" y="1434.511" />
+      <point x="826.23" y="603.0" />
+      <point x="1055.793" y="603.0" />
+      <point x="3.9195370823108533E-4" y="-247.5003240261692" />
+    </edge>
+    <edge source="org.example.model.ManagerTest" target="org.example.model.Cashier" relationship="CREATE">
+      <point x="-146.99950318680453" y="-4.7399370919265493E-4" />
+      <point x="-122.806" y="91.154" />
+      <point x="-122.806" y="690.412" />
+      <point x="211.0" y="690.412" />
+      <point x="211.0" y="1257.511" />
+      <point x="-136.4996169768421" y="-4.8158020717892214E-4" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.5337465564738292" showDependencies="true" x="593.5" y="712.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
