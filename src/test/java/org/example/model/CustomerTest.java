@@ -10,27 +10,28 @@ public class CustomerTest extends TestCase {
         super.setUp();
         customer = new Customer("Okey", 2500);
         store = new Store("ShopRite", new Manager("uche"));
-        store.restockStore("assignmentData.csv");
+        store.readFromFileToHashMap("assignmentData.csv");
     }
 
     public void testAddToCart_CartNotEmpty() {
-        customer.addToCart("Banana", 25, store);
+        store.addToCustomerCart(customer, "Banana", 15);
         int actual = customer.getCustomerCart().size();
         int expected = 1;
-        assertEquals(actual, expected);
+        assertEquals(expected, actual);
     }
 
     public void testRemoveFromCart() {
-        customer.addToCart("Banana", 25, store);
+        store.addToCustomerCart(customer, "Banana", 25);
         customer.removeFromCart("Banana");
         int actual = customer.getCustomerCart().size();
         int expected = 0;
-        assertEquals(actual, expected);
+        assertEquals(expected, actual);
+
+
     }
 
     public void testFindProduct_ProductInCart() {
-        customer.addToCart("Banana", 25, store);
-        customer.addToCart("Carrot", 25, store);
+        store.addToCustomerCart(customer, "Carrot", 25);
         int actual = 1;
         int expected = customer.findProduct("carrot");
         assertEquals(expected, actual);
@@ -38,10 +39,10 @@ public class CustomerTest extends TestCase {
 
 
     public void testGetTotalPurchaseAmount() {
-        customer.addToCart("Banana", 25, store);
-        customer.addToCart("Carrot", 25, store);
+        store.addToCustomerCart(customer, "Banana", 25);
+        store.addToCustomerCart(customer, "Carrot", 25);
         double actual = customer.getTotalPurchaseAmount();
         double expected = 101.0;
-        assertEquals(actual, expected);
+        assertEquals(expected, actual);
     }
 }

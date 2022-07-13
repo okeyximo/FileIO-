@@ -29,21 +29,19 @@ public class Manager {
             System.out.println("There are no products to be added");
             return false;
         }
-        if (store.findProduct(newProduct.getProductName()) < 0) {
-            store.getProductArrayList().add(newProduct);
-            System.out.println("Successfully added " + newProduct.getProductName() + " to warehouse");
-        } else {
-            int productIndex = store.findProduct(newProduct.getProductName());
-            int newProductQuantity = newProduct.getQuantity();
-            Product product = store.getProductArrayList().get(productIndex);
+        if (store.getProductMap().containsKey(newProduct.getProductName())) {
+            Product product = store.getProductMap().get(newProduct.getProductName());
             int oldProductQty = product.getQuantity();
-            product.setQuantity(newProductQuantity + oldProductQty);
+            product.setQuantity(newProduct.getQuantity() + oldProductQty);
+        } else {
+            store.getProductMap().put(newProduct.getProductName(), newProduct);
+            System.out.println("Successfully added " + newProduct.getProductName() + " to warehouse");
         }
         return true;
     }
 
     /**
-     * isHiring - checks if the maximum number of staffs needed is complete,
+     * HireCashier - checks if the maximum number of staffs needed is complete,
      * then hires cashier based on qualification and age.
      *
      * @param store   where cashier is meant to work.

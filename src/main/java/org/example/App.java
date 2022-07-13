@@ -1,10 +1,7 @@
 package org.example;
 
 import org.example.enums.Qualification;
-import org.example.model.Cashier;
-import org.example.model.Customer;
-import org.example.model.Manager;
-import org.example.model.Store;
+import org.example.model.*;
 
 import java.io.IOException;
 
@@ -19,50 +16,45 @@ public class App {
         manager.hireCashier(cashier, store);
         String path = "assignmentData.csv";
         String path2 = "assignmentData.csv";
-        try {
-            store.restockStore(path);
-        } catch (RuntimeException | IOException e) {
-            e.printStackTrace();
-        }
-        store.printAllProduct();
-        store.printProductByCategory("bars");
 
         try {
-            store.restockStore(path2);
-        } catch (RuntimeException | IOException e) {
-            e.printStackTrace();
+            store.readFromFileToHashMap(path);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
 
-        store.printAllProduct();
-//        store.getProductArrayList().forEach(System.out::println);
-        customer.addToCart("Carrot", 2000, store);
-        customer2.addToCart("Carrot", 2000, store);
-//        customer.addToCart("Carrot", 25, store);
-//        customer.addToCart("banana", 10, store);
-//        customer.addToCart("banana", 10, store);
-//        customer.addToCart("whole wheat", 10, store);
+        store.displayAllProduct();
 
-        store.printAllProduct();
+        store.printProductByCategory("Bars");
+        store.printProductByCategory("Snacks");
+        store.printProductByCategory("Cookies");
+        store.printProductByCategory("Soap");
 
+        try {
+            store.readFromFileToHashMap(path);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        store.displayAllProduct();
+
+
+        System.out.println(store.addToCustomerCart(customer, "Carrot", 2));
+        store.addToCustomerCart(customer, "Carrot", 2000);
+        store.addToCustomerCart(customer, "Banana", 10);
+        store.addToCustomerCart(customer, "Whole wheat", 1000);
+
+        store.displayAllProduct();
         try {
             cashier.printReceiptToTxtFile(customer);
         } catch (IOException e) {
             throw new RuntimeException(e);
-        }try {
+        }
+        try {
             cashier.printReceiptToTxtFile(customer2);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-//        System.out.println("_________________________");
-//        store.queryProductsByCategory("Bars").forEach(System.out::println);
         System.out.println("_________________________");
-//        store.queryProductsByCategory("Snacks").forEach(System.out::println);
-        System.out.println("_________________________");
-//        store.queryProductsByCategory("Cookies").forEach(System.out::println);
-
-//        store.printProductByCategory("cookies");
-
     }
-
-
 }
