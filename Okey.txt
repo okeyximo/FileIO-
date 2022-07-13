@@ -1,8 +1,8 @@
 #### RECEIPT ####
 s/n |   Product Name   | Qty | Amount  
-1.      Carrot             2     3.54
-2.      Carrot             2000     3540.0
-3.      Banana             10     22.7
-Total amount ---------> 3566.24
+1.      Carrot             2000     3540.0
+2.      Banana             10     22.7
+3.      Whole Wheat             1000     3490.0
+Total amount ---------> 7052.7
 Customer - Okey
 Thanks for your Patronage

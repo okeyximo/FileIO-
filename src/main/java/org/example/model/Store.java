@@ -108,6 +108,7 @@ public class Store {
         } else {
             System.out.print("      ##############    " + storeName.toUpperCase() + "     ############## \n");
             System.out.println("----------------------------------------------------------------");
+            System.out.printf("%s   %-15s%-15s%-10s%s\n", "S/N", "PRODUCT NAME", "QUANTITY", "PRICE", "CATEGORY");
             System.out.println("----------------------------------------------------------------");
             int count = 1;
             for (Product product : productMap.values()) {

@@ -28,6 +28,7 @@ public class App {
         store.printProductByCategory("Bars");
         store.printProductByCategory("Snacks");
         store.printProductByCategory("Cookies");
+        store.printProductByCategory("Snacks");
         store.printProductByCategory("Soap");
 
         try {
@@ -39,10 +40,9 @@ public class App {
         store.displayAllProduct();
 
 
-        System.out.println(store.addToCustomerCart(customer, "Carrot", 2));
         store.addToCustomerCart(customer, "Carrot", 2000);
         store.addToCustomerCart(customer, "Banana", 10);
-        store.addToCustomerCart(customer, "Whole wheat", 1000);
+        store.addToCustomerCart(customer, "Whole Wheat", 1000);
 
         store.displayAllProduct();
         try {
