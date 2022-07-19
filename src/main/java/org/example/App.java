@@ -25,20 +25,20 @@ public class App {
             throw new RuntimeException(e);
         }
 
-//        store.displayAllProduct();
-//
-//        store.printProductByCategory("Bars");
-//        store.printProductByCategory("Snacks");
-//        store.printProductByCategory("Cookies");
-//        store.printProductByCategory("Snacks");
-//        store.printProductByCategory("Soap");
+        store.displayAllProduct();
 
-//        try {
-//            store.readFromFileToHashMap(path);
-//        } catch (IOException e) {
-//            throw new RuntimeException(e);
-//        }
-//
+        store.printProductByCategory("Bars");
+        store.printProductByCategory("Snacks");
+        store.printProductByCategory("Cookies");
+        store.printProductByCategory("Snacks");
+        store.printProductByCategory("Soap");
+
+        try {
+            store.readFromFileToHashMap(path);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
 //        store.displayAllProduct();
 
 
@@ -56,11 +56,11 @@ public class App {
         store.addToCustomerQueue(customer2);
         store.addToCustomerQueue(customer4);
 
-        cashier.sellByPriority(store, "Carrot");
-        cashier.sellByPriority(store, "Banana");
-//        cashier.sellByPriority(store);
+//        cashier.sellByPriority(store, "Carrot");
+//        cashier.sellByPriority(store, "Banana");
+////        cashier.sellByPriority(store);
 //        cashier.sellByFIFO(store);
-
+        cashier.sell(store);
 
 
 //

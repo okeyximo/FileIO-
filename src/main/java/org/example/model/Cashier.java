@@ -5,9 +5,7 @@ import org.example.enums.Qualification;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Map;
-import java.util.PriorityQueue;
+import java.util.*;
 
 public class Cashier {
     private String name;
@@ -118,17 +116,36 @@ public class Cashier {
             CustomerDTO customerDTO = productPriorityQueue.remove();
             System.out.println("Sold " + customerDTO.getProductQuantity() + " " + productName + " to " + customerDTO.getCustomerName());
         }
+    }
 
+    public void sell(Store store){
+       Queue<Customer> customerQueue = store.getCustomerQueue();
+       List<String> productTracker = new ArrayList<>();
+       for (Customer customer : customerQueue){
+           for (Product product : customer.getCustomerCart()){
+               if (productTracker.contains(product.getProductName())){
+                   System.out.println("already sold");
+               }else{
+                   productTracker.add(product.getProductName());
+                   sellByPriority(store,product.getProductName());
+               }
+           }
+       }
     }
-    public void sellByPriority(Store store){
-        Map<String, PriorityQueue<CustomerDTO>> customerDTOMap = store.getProductQueues();
-        Map<String, Customer> customerFinderMap = store.getCustomerFinderMap();
-        for (PriorityQueue<CustomerDTO> productQueue : customerDTOMap.values()){
-            while (!productQueue.isEmpty()) {
-                CustomerDTO customerDTO = productQueue.remove();
-                Customer customer = customerFinderMap.get(customerDTO.getCustomerName());
-                printReceipt(customer);
-            }
-        }
-    }
+
+
+//    public void sellByPriority(Store store){
+//        Map<String, PriorityQueue<CustomerDTO>> customerDTOMap = store.getProductQueues();
+//        Map<String, Customer> customerFinderMap = store.getCustomerFinderMap();
+//        for (PriorityQueue<CustomerDTO> productQueue : customerDTOMap.values()){
+//            while (!productQueue.isEmpty()) {
+//                CustomerDTO customerDTO = productQueue.remove();
+//                Customer customer = customerFinderMap.get(customerDTO.getCustomerName());
+//                printReceipt(customer);
+//            }
+//        }
+//    }
+
+
+
 }
