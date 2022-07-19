@@ -1,5 +1,7 @@
 package org.example.model;
 
+import java.util.Comparator;
+
 public class Product {
     private String productName;
     private double unitPrice;
@@ -54,6 +56,7 @@ public class Product {
     public int hashCode() {
         return super.hashCode();
     }
+
 
     @Override
     public boolean equals(Object obj) {

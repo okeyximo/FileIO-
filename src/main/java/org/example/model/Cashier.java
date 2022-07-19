@@ -6,6 +6,8 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Map;
+import java.util.PriorityQueue;
 
 public class Cashier {
     private String name;
@@ -103,5 +105,30 @@ public class Cashier {
         writer.write(body.toString());
         writer.close();
 
+    }
+    public void sellByFIFO(Store store){
+        while (!store.getCustomerQueue().isEmpty()) {
+            printReceipt(store.getCustomerQueue().remove());
+        }
+    }
+
+    public void sellByPriority(Store store, String productName){
+        PriorityQueue<CustomerDTO> productPriorityQueue = store.getProductQueues().get(productName);
+        while(!productPriorityQueue.isEmpty()){
+            CustomerDTO customerDTO = productPriorityQueue.remove();
+            System.out.println("Sold " + customerDTO.getProductQuantity() + " " + productName + " to " + customerDTO.getCustomerName());
+        }
+
+    }
+    public void sellByPriority(Store store){
+        Map<String, PriorityQueue<CustomerDTO>> customerDTOMap = store.getProductQueues();
+        Map<String, Customer> customerFinderMap = store.getCustomerFinderMap();
+        for (PriorityQueue<CustomerDTO> productQueue : customerDTOMap.values()){
+            while (!productQueue.isEmpty()) {
+                CustomerDTO customerDTO = productQueue.remove();
+                Customer customer = customerFinderMap.get(customerDTO.getCustomerName());
+                printReceipt(customer);
+            }
+        }
     }
 }

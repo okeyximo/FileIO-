@@ -4,20 +4,20 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class Store {
     private final String storeName;
-
-
     private final Manager manager;
     private final ArrayList<Cashier> cashierStaffList;
     private int maxStaffNeeded;
     private int staffId = 1000;
 
-
     private final Map<String, ArrayList<String>> categoryFinder;
     private final Map<String, Product> productMap;
+    private Map<String, PriorityQueue<CustomerDTO>> productQueues;
+    private Queue<Customer> customerQueue;
+    private Map<String, Customer> customerFinderMap;
+
 
 
     /* CONSTRUCTOR, GETTERS AND SETTERS */
@@ -29,6 +29,9 @@ public class Store {
         this.maxStaffNeeded = 3;
         this.categoryFinder = new HashMap<>();
         this.productMap = new HashMap<>();
+        this.productQueues = new HashMap<>();
+        this.customerQueue = new LinkedList<>();
+        this.customerFinderMap = new HashMap<>();
     }
 
     public String getStoreName() {
@@ -52,16 +55,23 @@ public class Store {
         return maxStaffNeeded;
     }
 
-    public void setMaxStaffNeeded(int maxStaffNeeded) {
-        this.maxStaffNeeded = maxStaffNeeded;
-    }
-
     public void setStaffId(int staffId) {
         this.staffId = staffId;
     }
 
     public int getStaffId() {
         return staffId;
+    }
+
+    public Map<String, PriorityQueue<CustomerDTO>> getProductQueues() {
+        return productQueues;
+    }
+
+    public Queue<Customer> getCustomerQueue() {
+        return customerQueue;
+    }
+    public Map<String, Customer> getCustomerFinderMap() {
+        return customerFinderMap;
     }
 
     /* STORE METHODS */
@@ -130,8 +140,8 @@ public class Store {
         if (categoryFinder.containsKey(category)) {
             System.out.print(category.toUpperCase() + " SECTION\n");
             System.out.printf("%s   %-15s%-15s%-10s\n", "S/N", "PRODUCT NAME", "QUANTITY", "PRICE");
-            for (String product : categoryFinder.get(category)) {
-                System.out.printf("%d   %-20s%-12d%-10.2f\n", count, this.getProductMap().get(product).getProductName(), this.getProductMap().get(product).getQuantity(), this.getProductMap().get(product).getUnitPrice());
+            for (String productName : categoryFinder.get(category)) {
+                System.out.printf("%d   %-20s%-12d%-10.2f\n", count, this.getProductMap().get(productName).getProductName(), this.getProductMap().get(productName).getQuantity(), this.getProductMap().get(productName).getUnitPrice());
                 count++;
             }
         } else System.out.println("There is no product in " + category.toUpperCase() + " Section.");
@@ -161,9 +171,28 @@ public class Store {
         } else return false;
     }
 
-    public void fifoQueue(Customer customer) {
 
+    public void addToCustomerQueue(Customer customer){
+        this.customerQueue.add(customer);
+        System.out.println(customer.getCustomerName() + " joined the Queue");
+        this.customerFinderMap.put(customer.getCustomerName(), customer);
+        for (Product product : customer.getCustomerCart()){
+            CustomerDTO customerDTO = new CustomerDTO(customer.getCustomerName(), product.getProductName(), product.getQuantity());
+            if (productQueues.containsKey(product.getProductName())){
+                PriorityQueue<CustomerDTO> productQueue = productQueues.get(product.getProductName());
+                productQueue.add(customerDTO);
+            }
+            else {
+                PriorityQueue<CustomerDTO> productQueue = new PriorityQueue<>();
+                productQueue.add(customerDTO);
+                productQueues.put(product.getProductName(), productQueue);
+            }
+        }
     }
+
 }
+
+
+
 
 

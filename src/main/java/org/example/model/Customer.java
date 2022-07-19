@@ -4,9 +4,10 @@ import org.example.model.Product;
 import org.example.model.Store;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.PriorityQueue;
 
-public class Customer {
+public class Customer implements Comparable<Customer> {
     private double wallet;
     private String customerName;
     private ArrayList<Product> customerCart;
@@ -107,6 +108,14 @@ public class Customer {
         return totalPrice;
     }
 
+    public int getTotalQtyPurchased() {
+        int totalQtyPurchased = 0;
+        for (Product product : this.customerCart) {
+            totalQtyPurchased += product.getQuantity();
+        }
+        return totalQtyPurchased;
+    }
+
     /**
      * printCustomerCart - Prints the name, qty and amount of all the products inside the customer cart
      */
@@ -116,5 +125,18 @@ public class Customer {
                     + product.getQuantity() + "  " + product.getUnitPrice());
 
         }
+    }
+
+    @Override
+    public int compareTo(Customer o) {
+        if (this.getTotalQtyPurchased() == o.getTotalQtyPurchased()) return 0;
+        return (this.getTotalQtyPurchased() < o.getTotalQtyPurchased()) ? 1 : -1;
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "customerName='" + customerName + '\'' +
+                '}';
     }
 }

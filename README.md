@@ -1,12 +1,21 @@
-# WEEK 2 TASK
+# DECAGON JAVA TASK
 
 ## READ PRODUCT DATA FROM AN EXCEL SHEET
 
 ### Problem Description
 
+### WEEK 2
 Continuing from the store task, you are to read data from an excel spreadsheet and create an array of product objects
 for your store. Products should be categorized for easy access by the cashier and customers. Product out of stock should
 have a value of “OUT OF STOCK” to prevent the purchase of products that are not available
+
+### WEEK 3
+Use your understanding of collections and generics to implement sales and purchase in your store application.
+
+1. Implement priority queue based on customers' FIFO (First In, First Out).
+
+2. Implement priority queue based on the number of Items per customer
+
 
 How will I complete this project?
 
