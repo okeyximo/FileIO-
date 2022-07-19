@@ -124,7 +124,8 @@ public class Cashier {
        for (Customer customer : customerQueue){
            for (Product product : customer.getCustomerCart()){
                if (productTracker.contains(product.getProductName())){
-                   System.out.println("already sold");
+//                   System.out.println("Already sold" + product.getProductName() + " to " + customer.getCustomerName());
+                   System.out.println("");
                }else{
                    productTracker.add(product.getProductName());
                    sellByPriority(store,product.getProductName());
