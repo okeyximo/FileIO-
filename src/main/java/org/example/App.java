@@ -23,6 +23,10 @@ public class App {
             store.readFromFileToHashMap(path);
         } catch (IOException e) {
             throw new RuntimeException(e);
+        } try {
+            store.readFromFileToHashMap(path);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
 
         store.displayAllProduct();
@@ -42,20 +46,36 @@ public class App {
 //        store.displayAllProduct();
 
 
-//        store.addToCustomerCart(customer, "Carrot", 10);
-//        store.addToCustomerCart(customer2, "Carrot", 10);
-//        store.addToCustomerCart(customer3, "Carrot", 10);
+        store.addToCustomerCart(customer3, "Carrot", 10);
+        store.addToCustomerCart(customer2, "Carrot", 12);
 
+        store.addToCustomerCart(customer, "Carrot", 13);
         store.addToCustomerCart(customer4, "Carrot", 40);
         store.addToCustomerCart(customer2, "Banana", 10);
+        store.addToCustomerCart(customer3, "Banana", 10);
         store.addToCustomerCart(customer4, "Banana", 10);
-        store.addToCustomerCart(customer3, "Whole Wheat", 100);
+        store.addToCustomerCart(customer3, "Whole Wheat", 150);
         store.addToCustomerCart(customer4, "Whole Wheat", 200);
+        store.addToCustomerCart(customer, "Whole Wheat", 100);
 
         store.addToCustomerQueue(customer);
         store.addToCustomerQueue(customer2);
         store.addToCustomerQueue(customer3);
         store.addToCustomerQueue(customer4);
+
+//        try {
+//            cashier.printReceiptToTxtFile(customer);
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        } try {
+//            cashier.printReceiptToTxtFile(customer2);
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        } try {
+//            cashier.printReceiptToTxtFile(customer3);
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
 
 //        cashier.sellByPriority(store, "Carrot");
 //        cashier.sellByPriority(store, "Banana");

@@ -123,7 +123,6 @@ public class Customer {
         for (Product product : this.customerCart) {
             System.out.println(product.getProductName() + "  "
                     + product.getQuantity() + "  " + product.getUnitPrice());
-
         }
     }
 

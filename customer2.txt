@@ -1,0 +1,6 @@
+#### RECEIPT ####
+s/n |   Product Name   | Qty | Amount  
+1.      Banana             10     22.7
+Total amount ---------> 22.7
+Customer - customer2
+Thanks for your Patronage

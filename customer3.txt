@@ -1,0 +1,6 @@
+#### RECEIPT ####
+s/n |   Product Name   | Qty | Amount  
+1.      Whole Wheat             100     349.0
+Total amount ---------> 349.0
+Customer - customer3
+Thanks for your Patronage

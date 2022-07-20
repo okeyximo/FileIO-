@@ -183,7 +183,13 @@ public class Store {
                 productQueue.add(customerDTO);
             }
             else {
-                PriorityQueue<CustomerDTO> productQueue = new PriorityQueue<>();
+                PriorityQueue<CustomerDTO> productQueue = new PriorityQueue<>(new Comparator<CustomerDTO>() {
+                    @Override
+                    public int compare(CustomerDTO o1, CustomerDTO o2) {
+//                        if (o1.getProductQuantity() == o2.getProductQuantity()) return 0;
+                        return o1.getProductQuantity() > o2.getProductQuantity() ? -1 : 1;
+                    }
+                });
                 productQueue.add(customerDTO);
                 productQueues.put(product.getProductName(), productQueue);
             }
