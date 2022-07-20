@@ -1,8 +1,8 @@
 package org.example.model;
 
 public class CustomerDTO implements Comparable<CustomerDTO> {
-    private String customerName;
-    private String productName;
+    private final String customerName;
+    private final String productName;
     private int productQuantity;
 
     public CustomerDTO(String customerName, String productName, int productQuantity) {
@@ -15,17 +15,12 @@ public class CustomerDTO implements Comparable<CustomerDTO> {
         return customerName;
     }
 
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
-    }
+
 
     public String getProductName() {
         return productName;
     }
 
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
 
     public int getProductQuantity() {
         return productQuantity;

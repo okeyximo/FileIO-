@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
-public class Customer implements Comparable<Customer> {
+public class Customer {
     private double wallet;
     private String customerName;
     private ArrayList<Product> customerCart;
@@ -125,12 +125,6 @@ public class Customer implements Comparable<Customer> {
                     + product.getQuantity() + "  " + product.getUnitPrice());
 
         }
-    }
-
-    @Override
-    public int compareTo(Customer o) {
-        if (this.getTotalQtyPurchased() == o.getTotalQtyPurchased()) return 0;
-        return (this.getTotalQtyPurchased() < o.getTotalQtyPurchased()) ? 1 : -1;
     }
 
     @Override

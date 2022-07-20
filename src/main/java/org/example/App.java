@@ -42,9 +42,10 @@ public class App {
 //        store.displayAllProduct();
 
 
-        store.addToCustomerCart(customer, "Carrot", 10);
-        store.addToCustomerCart(customer2, "Carrot", 20);
-        store.addToCustomerCart(customer3, "Carrot", 30);
+//        store.addToCustomerCart(customer, "Carrot", 10);
+//        store.addToCustomerCart(customer2, "Carrot", 10);
+//        store.addToCustomerCart(customer3, "Carrot", 10);
+
         store.addToCustomerCart(customer4, "Carrot", 40);
         store.addToCustomerCart(customer2, "Banana", 10);
         store.addToCustomerCart(customer4, "Banana", 10);
@@ -52,8 +53,8 @@ public class App {
         store.addToCustomerCart(customer4, "Whole Wheat", 200);
 
         store.addToCustomerQueue(customer);
-        store.addToCustomerQueue(customer3);
         store.addToCustomerQueue(customer2);
+        store.addToCustomerQueue(customer3);
         store.addToCustomerQueue(customer4);
 
 //        cashier.sellByPriority(store, "Carrot");
