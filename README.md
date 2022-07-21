@@ -16,6 +16,11 @@ Use your understanding of collections and generics to implement sales and purcha
 
 2. Implement priority queue based on the number of Items per customer
 
+### WEEK 4
+Use your understanding of threads and concurrency to implement sales and purchases in your store application, 
+allowing multiple customers to purchase products from your store. 
+Prevent various problems associated with multi-threading such as race conditions, deadlock,
+
 
 How will I complete this project?
 
